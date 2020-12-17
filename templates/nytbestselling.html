@@ -1,0 +1,71 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<style>
+img {
+  image-orientation: left;
+}
+body {} .section2 {
+
+  			position: absolute;
+  			left: 400px;
+  			width: 910px;
+  			padding: 40px;
+
+}
+		.section1 {
+			padding: 20px;
+			background-color: lavender;
+			border-top: 20px solid white;
+			border-bottom: 5px solid white;
+		}
+</style>
+<head>
+
+		<title>NYT Best Selling Books</title>
+
+</head>
+
+<body>
+<div class ='heading'>
+	<div style="text-align:center; background-color: white; border-bottom: 1px solid lightgray; padding: 5px;"><h2>The New York Times Best Selling Books</h2></div>
+</div>
+
+<h3 style="float:right"><a href='/'>Display another list?</a></h3>
+<h2>{{ listname }} List:</h2>
+
+{% for item in info %}
+
+<div class ='section1'>
+	<h1>{{ item['rank'] }}</h1>
+	<h3 style ="font-size: 30 ">{{ item['title'] }}</h3>
+	<h4>{{ item['contributor'] }}</h4>
+</div>
+
+<div class="section2">
+	<div>
+		<span style="font-weight: bold"> Weeks on Best Selling List: </span> <span style="font-weight: normal">{{ item['weeks_on_list'] }}</span>
+	</div>
+	<div>
+		<span style="font-weight: bold"> Synopsis: </span> </br> <span style="font-weight: normal">{{ item['description'] }}</span>
+	</div>
+
+	<p style="font-weight: bold"> Links to Purchase Book: </p>
+	{% for links in item['buy_links'] %}
+	<a href = {{ links['url'] }}> {{ links['name'] }}</a>
+	{% endfor %}
+
+</div>
+
+
+<img src= '{{ item['book_image'] }}' width = {{ item['book_image_width'] }} height = {{ item['book_image_height'] }}></image>
+
+{% endfor %}
+
+
+<h2 style="text-align: center; background-color: lavender; padding: 20px "><a href='/'>Display another list?</a></h2>
+
+
+</body>
+</html>

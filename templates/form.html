@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body{}.book {
+              position: absolute;
+              left: 900px;
+              width: 910px;
+              padding: 40px;
+          }
+          .section {
+              float: left;
+              border-left: 200px solid white;
+              border-top: 39px solid white;
+          }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{page_title}}</title>
+</head>
+<body>
+
+<div class ='heading'>
+	<div style="text-align:center; background-color: white; border-bottom: 1px solid lightgray; padding: 5px;" ><h2>The New York Times Best Selling Books</h2></div>
+</div>
+
+<div class = 'section'>
+    <h3>Welcome to my HCDE 310: Interactive Systems Design & Technology final project!</h3>
+    <p>Access the New York Times Best Sellers List for:</p>
+    <p>• Book Title</p>
+    <p>• Author</p>
+    <p>• Number of Weeks on the List</p>
+    <p>• Links to Purchase the Book</p>
+    <h4> Let's get started by selecting a Best Sellers List!</h4>
+</div>
+
+
+<div class = 'book'>
+    <form id = "bookform" action = "getlist" method = "get">
+
+        <h3>Select a Best Sellers List:</h3>
+
+        <input type="checkbox" name="list_type" value = "hardcover-fiction" id="hardfiction"/>
+        <label for = 'hardfiction'>Hardcover Fiction</label><br />
+
+        <input type="checkbox" name="list_type" value = 'hardcover-nonfiction' id="hardnonfiction"/>
+        <label for = 'hardnonfiction'>Hardcover Nonfiction</label><br />
+
+        <input type="checkbox" name="list_type" value = 'paperback-nonfiction' id="papernonfiction"/>
+        <label for = 'papernonfiction'>Paperback Nonfiction</label><br />
+
+        <input type="checkbox" name="list_type" value = 'e-book-fiction' id="ebookfiction"/>
+        <label for = 'ebookfiction'>E-book Fiction</label><br />
+
+        <input type="checkbox" name="list_type" value = 'e-book-nonfiction' id="ebooknonfiction"/>
+        <label for = 'ebooknonfiction'>E-book Nonfiction</label><br />
+
+        <input type="checkbox" name="list_type" value = 'young-adult-hardcover' id="youngadulthardcover"/>
+        <label for = 'youngadulthardcover'>Young Adult Hardcover</label><br />
+
+        <input type="checkbox" name="list_type" value = 'young-adult-paperback' id="youngadultpaperback"/>
+        <label for = 'youngadultpaperback'>Young Adult Paperback</label><br />
+
+        <input type="checkbox" name="list_type" value = 'combined-print-and-e-book-fiction' id="printandebookfiction"/>
+        <label for = 'printandebookfiction'>Combined Print and E-Book Fiction</label><br />
+
+        <input type="checkbox" name="list_type" value = 'combined-print-and-e-book-nonfiction' id="printandebooknonfiction"/>
+        <label for = 'printandebooknonfiction'>Combined Print and E-Book Nonfiction</label><br />
+
+        <input type="submit" value = "SELECT" name = "submit" id="submit"/>
+
+    </form>
+</div>
+
+</body>
+</html>
